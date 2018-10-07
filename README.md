@@ -4,6 +4,8 @@
 
 In this article you will see how you can deploy and manage JFrog Artifactory on a Kubernetes cluster with the help of Rancher. At the end of this article you will have a fully functional [JFrog Artifactory OSS](https://jfrog.com/open-source/) (Open Source Solutions). The same steps can be used to install a licensed version of Artifactory. You will see how you can create a generic repository in Artifactory and upload an artefact to it. Artifactory has much more features besides the ones presented in this article, but the purpose of this article is to show how you can easily install Artifactory onto a Kubernetes cluster with the help of Rancher.
 
+In a further article, I will describe some of the features of Artifactory and how to use them.
+
 #### **Software versions used**
 
 At the time of writing, the software versions used for this article were the followings:
@@ -11,6 +13,13 @@ At the time of writing, the software versions used for this article were the fol
 - Kubernetes cluster running on Google Kubernetes Engine version 1.10.7-gke.2;
 - Artifactory helm chart version 7.4.2;
 - Artifactory OSS version 6.3.2
+
+There are multiple ways to install Artifactory. Here I'm using a Helm chart to deploy Artifactory on a Kubernetes Cluster, and that Kubernetes cluster is deployed with Rancher. The question arises - why bother use Rancher at all? While you can install an artifactory helm chart by just using kubectl/helm, using Rancher provides quite some benefits:
+- an easy to use web user interface;
+- simple overview of the whole cluster, or multiple clusters;
+- out of the box monitoring of your cluster(s);
+- workload, RBAC, policy and project management;
+- use all the power of kubernetes without the need to install any software locally, all you need is just a browser.
 
 Let's start the fun.
 
